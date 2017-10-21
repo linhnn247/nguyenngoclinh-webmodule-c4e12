@@ -1,0 +1,17 @@
+.full-font {
+  font-family: 'Lobster', cursive;
+}
+
+.mag{
+  margin-right: 1px;
+  margin-bottom: 200px;
+}
+#heading2{
+  margin-right: 1px;
+  margin-bottom: 200px;
+  color: black;
+}
+
+.back-card{
+  background-color: #034abc;
+}
