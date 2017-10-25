@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/homepage.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  </head>
+  <style media="screen">
+  table, th, td {
+
+}
+th, td {
+    padding: 5px;
+}
+th {background-color: #0a4bb2;
+  color: white;
+    text-align: left;}
+
+  </style>
+  <body>
+
+
+    <div class="row">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand full-font text-light font-color" href="#">Mùa đông không lạnh</a>
+
+        <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+             <a class="nav-link text-light" href="#">Về chúng tôi<span class="sr-only">(current)</span></a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link text-light" href="#">Đăng nhập<span class="sr-only">(current)</span></a>
+           </li>
+         </ul>
+      </nav>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+
+<div class="container">
+  <a href="/add-girl">
+      <button class="btn btn-lg btn-warning float-right mt-2 mb-2">Thêm</button>
+  </a>
+
+
+  <table class ='table'>
+    <thead>
+      <tr class ="row">
+        <th class='col-md-1'>#</th>
+        <th class='col-md-1'>Thao tác</th>
+        <th class='col-md-2'>Tên</th>
+        <th class='col-md-2'>Ảnh</th>
+        <th class='col-md-6'>Chi tiết</th>
+      </tr>
+    </thead>
+   <tbody>
+     {%for girl in girls%}
+
+     <tr class ="row">
+       <td class='col-md-1'>{{loop.index}}</td>
+
+       <td class='col-md-1'>
+         <span><i class="fa fa-pencil fa-lg " aria-hidden="true"> Sửa</i></span>
+
+        <form action="{{ url_for('deletegirl', id=10) }}" method="post">
+        <input type="hidden" name="method" value="DELETE"/>
+        <span>
+          <button type="submit" class="btn btn-link" name="button">
+            <i class="fa fa-trash fa-lg " aria-hidden="true"> Xóa</i>
+          </button>
+        </span>
+        <input type="hidden" name="name" value={{girl.name}}>
+        </form>
+       </td>
+
+       <td  class='col-md-2'>{{girl.name}}</td>
+
+       <td class='col-md-2'>
+         <a href="{{ girl.image }}">Xem ảnh</a>
+       </td>
+
+       <td class='col-md-6'>{{girl.description}}</td>
+
+     </tr>
+     {% endfor %}
+
+   </tbody>
+  </table>
+
+</div>
+<br><br>
+
+
+
+
+       <footer class = 'footer bg-dark fixed-bottom'>
+         <div class="row">
+           <div class="container">
+             <br>
+             <h6 class='text-right text-light font-italic'>♫♪♪ Mọi thắc mắc và yêu cầu xin gửi về hòm mail: abc@gmail.com ♫♪♪</h6>
+             <br>
+           </div>
+         </div>
+       </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  </body>
+</html>

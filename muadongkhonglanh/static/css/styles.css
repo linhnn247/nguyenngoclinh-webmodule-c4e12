@@ -1,0 +1,29 @@
+h1{
+  color: darkblue;
+}
+
+h2{
+  background-color: black;
+  color: #77f99a;
+}
+
+.full-font {
+  font-family: 'Lobster', cursive;
+}
+
+#heading1 {
+  background-color: black;
+  color: #f27f46;
+}
+
+.ml500 {
+  margin-left:  100px:
+}
+
+.doimau {
+  background-color: #16e5e5;
+  }
+
+  .font-color{
+    color: #16e5e5 !important;
+  }
